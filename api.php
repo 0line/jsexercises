@@ -4,10 +4,10 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH'], $_SERVER['HTTP_REFERER']) && strtol
     $a_componentes_url = parse_url($_SERVER['HTTP_REFERER']);
     $e_origen_http = $a_componentes_url['scheme'] . '://' . $a_componentes_url['host'];
     // Si la petición es de la misma URL del servidor
-    if ($e_origen_http == 'http://localhost/')) {
-        if ($_REQUEST['opcion'] == "palindrome") {
-            $resultado = f_validarpalindromo($_REQUEST['input_palabra']);
-        }
+    if ($e_origen_http == 'http://localhost') {
+        $resultado = f_validarpalindromo($_REQUEST['frase']);
+        header('Content-Type: application/json');
+        echo json_encode($resultado);
     }
 }
 
