@@ -1,5 +1,6 @@
 $(document).ready(function(){ 
    $("#btnpalindromo").on('click',function(){
+       console.log("aqui");
         $.ajax({ type: "post",
         url: 'api.php',
         data: { "frase": $('#inpfrase').val()},
