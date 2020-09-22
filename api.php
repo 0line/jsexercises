@@ -1,3 +1,4 @@
+    if ($e_origen_http == 'http://localhost/')) {
 <?php
    // Si la petición es vía AJAX
 if (isset($_SERVER['HTTP_X_REQUESTED_WITH'], $_SERVER['HTTP_REFERER']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
@@ -10,9 +11,8 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH'], $_SERVER['HTTP_REFERER']) && strtol
         echo json_encode($resultado);
     }
 }
-
 function f_validarpalindromo($palabra){
     $palabra=str_replace(" ", "", $palabra);
-    return (strrev($palabra) == $palabra) ? true:false;
 }
+    return (strrev($palabra) == $palabra) ? true:false;
 ?>
